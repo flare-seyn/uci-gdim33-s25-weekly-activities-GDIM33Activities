@@ -21,5 +21,5 @@ Chat with your table's LA about their taste in games. How are their tastes simil
 <img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/da406662-4c49-4103-b8d8-46672c2d8a6e" />
 
 genre seems to be 2D platformer.
-test
+
 
