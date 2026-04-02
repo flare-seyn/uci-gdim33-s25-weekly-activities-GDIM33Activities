@@ -1,6 +1,8 @@
 ## Week1 in class
 
+
 # Actitivy 1 Brainstorming
+
 1. pattern: inspirtation from slay the spire maybe
 maybe kind of dungeon adventuring, player collecting objects and clues to advance to the next area and snowballing to defeat a final boss
 
