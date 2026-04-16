@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 # Week1 in class
@@ -23,3 +24,22 @@ Chat with your table's LA about their taste in games. How are their tastes simil
 genre seems to be 2D platformer.
 
 
+=======
+# GDIM 33 In-Class Activities
+## W1
+### Activity 1
+Put your inspo board link here. Do NOT leave a bare URL. REMOVE ALL INSTRUCTIONAL TEXT.
+
+1. Put your activity 1 answers here.
+2. Please keep the proper list format.
+
+
+### Activity 2
+Put your activity 2 image here. REMOVE THIS INSTRUCTIONAL TEXT.
+
+
+## W2
+Write your W2 Devlog here.
+
+Continue adding additional headers below this one for future weeks and future activities.
+>>>>>>> 8c036f4afcf5e21d55f62f720ae5e70ffff9b3f6
