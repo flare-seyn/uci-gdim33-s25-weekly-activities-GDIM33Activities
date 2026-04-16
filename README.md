@@ -23,3 +23,7 @@ Chat with your table's LA about their taste in games. How are their tastes simil
 
 genre seems to be 2D platformer.
 
+# Week 3 In class
+
+## Activity 1 
+<img width="1416" height="1085" alt="image" src="https://github.com/user-attachments/assets/5c640c18-10c9-4ba3-8429-f8d483b1caa2" />
