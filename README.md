@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 
 # Week1 in class
