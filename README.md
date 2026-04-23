@@ -28,7 +28,7 @@ genre seems to be 2D platformer.
 ## Activity 1 
 <img width="400" height="600" alt="image" src="https://github.com/user-attachments/assets/5c640c18-10c9-4ba3-8429-f8d483b1caa2" />   <img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/bcaa1d26-9fab-49a4-a5d3-ae217379d922" />
 
-# Activity 2
+## Activity 2
 
 Saving the event name for the explore-to-dialogue transition as a Scene variable like clickNpcEventName is advantageous because it lets me keep that event name in one place instead of typing the same string in multiple parts of the graph. That makes it easier for me to stay consistent and reduces the chance of spelling mistakes breaking the transition. If I ever need to rename the event later, I only need to update the variable instead of searching through every graph that uses it.
 
@@ -37,3 +37,18 @@ Using a Debug.Log() node helped me test my graphs at an intermediate step becaus
 The Set Cursor Lock State is not very relevant to my Vertical Slice because my project is a 2D platformer, not a 3D game that depends on mouse-look camera control. My player mainly uses keyboard movement and simple interaction, so locking the cursor would not really affect the main gameplay experience. Because of that, it is not something I would prioritize in my slice.
 
 The concept of a game state is relevant to my Vertical Slice because my game still has different overall phases, even though it is a small project. For example, there is a gameplay state where the player can move, jump, fight, and interact, and there could also be a lose state or level-complete state where normal controls stop and the game responds differently. Thinking about game states helps me organize the experience more clearly and makes the game feel more complete
+
+
+# Week 4 In Class
+
+
+## Activity 1: playtesting
+My main goal is to test the game playability and the basic instructions are directly inserted in the itch.io gamepage.
+hidden mechanics expected; normal jumping will be extreme dangerous, a speciial strategy is designed and during the test i will monitor if other guys can figure it out.
+playable: basic 1 level challenge: dodge a patrolling mob and spike trap( most visbible and permanent one.
+playtest group members:
+beiduo jin, OKADA Naoma , Nansong Sun
+playtesting notes:
+playetesters spent a few attempts to figure out the hidden direction that direct crossing is not feasible, but jumping at the edge of the platform and straightly move over the mob and jump to the final platform before it figures out the case and turn back to chase)
+
+## Activity 2 
