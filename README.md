@@ -63,3 +63,53 @@ There is not really a strict limit to the total number of dialogue nodes the wri
 3. In your own words, describe the purpose of the "Regenerate Nodes" button.
 
 The purpose of the Regenerate Nodes button is to rebuild the Visual Scripting node library so Unity knows what classes, variables, methods, and properties should be available as nodes in graphs. In this activity, that matters because PlayerReplyW4 is a custom class and Unity does not automatically expose every custom type to Visual Scripting. By adding the type in the Visual Scripting settings and pressing Regenerate Nodes, Unity updates the database that the graph system uses, which makes those custom types and their members available as nodes. Without doing this, the graph may not recognize the class correctly or give access to the data needed for the dialogue system.
+
+
+# Week 5 In class
+
+## Activity 1: Task Break-down
+
+Feature: Build the first playable dungeon level using Unity Tilemaps
+
+Big Step 1: Create the simplest playable Tilemap level
+This step focuses on building the minimum version of the level so the player can move through it.
+
+Create a Grid object and a Tilemap in the scene for the ground and platforms.
+Test: Run the game and confirm the Tilemap is visible in the scene.
+Paint a small stretch of ground and at least one raised platform.
+Test: Run the game and confirm the player can stand on the tiles visually.
+Add a Tilemap Collider 2D so the player does not fall through the tiles.
+Test: Run the game and confirm the player collides correctly with the floor and platform.
+Add a gap or simple jump section in the Tilemap.
+Test: Run the game and confirm the player must jump to cross it.
+
+Big Step 2: Add hazard and level progression using the Tilemap layout
+This step makes the level feel more like an actual game area instead of only a movement test.
+
+Paint a hazard area, such as spikes or a dangerous pit, into the level layout.
+Test: Run the game and confirm the hazard is visible and placed where the player can encounter it.
+Add collision or trigger logic so the hazard damages or resets the player.
+Test: Use a Debug.Log() or run the game and confirm the message/action happens when the player touches the hazard.
+Add a simple end area, such as a door, flag, or goal platform.
+Test: Run the game and confirm the player can reach the end area.
+Add a trigger at the end area to detect level completion.
+Test: Use a Debug.Log("Level Complete") and confirm it prints when the player reaches the goal.
+
+Big Step 3: Expand the Tilemap level into a more recognizable dungeon slice
+This step adds a little more structure and visual clarity to match the planned game.
+
+Add wall tiles and shape the level so it looks more like a dungeon space instead of floating blocks.
+Test: Run the game and confirm the level looks more intentional and readable.
+Separate the layout into a start area, challenge area, and exit area.
+Test: Run the game and confirm the player can clearly move through the level in sequence.
+Add one enemy or obstacle into the Tilemap-based level.
+Test: Run the game and confirm the player can encounter it in the intended section.
+Adjust tile placement to make jumps, hazards, and progression feel fair.
+Test: Play through the level from start to finish and confirm it is possible to complete.
+
+## Activity 2: What I accomplished in class today
+
+Today, I worked on integrating my Unity system, Tilemaps, into my game by building the first version of my dungeon level. I created a Grid and Tilemap, painted ground and platform tiles, and added collision so the player could walk and jump on the level correctly. After that, I added a simple jump gap to make the level function more like an actual platformer instead of just a flat test scene.
+
+After getting the basic layout working, I added a hazard section and started building a clearer level flow with a start area and an end area. I used testing in Play mode and debug messages to check whether the player could move through the level, collide with the tiles correctly, and trigger hazards or the goal as expected. By the end of class, I had a more playable level structure that used Tilemaps as an actual gameplay system rather than only as background decoration.
+I also received ideas and suggestions about scriptable objects description and the roadmap to work on it.
