@@ -113,3 +113,23 @@ Today, I worked on integrating my Unity system, Tilemaps, into my game by buildi
 
 After getting the basic layout working, I added a hazard section and started building a clearer level flow with a start area and an end area. I used testing in Play mode and debug messages to check whether the player could move through the level, collide with the tiles correctly, and trigger hazards or the goal as expected. By the end of class, I had a more playable level structure that used Tilemaps as an actual gameplay system rather than only as background decoration.
 I also received ideas and suggestions about scriptable objects description and the roadmap to work on it.
+
+
+
+# Week 6 IN Class
+
+## Activity 1: playtesting
+link: https://11122233444444.itch.io/gdim33-vertical-slice-2
+goals: testing bugs and adjusting difficulty level.
+new features since last playtest:Expanded the game from two levels to four levels, adding Level 3: Split Route Atrium and Level 4: Exit Gauntlet with new platform layouts, hazards, moving platforms, bounce pads, dash-refresh orbs, crumble platforms, relics, enemies, and final gauntlet progression. 
+Added more variable completion methods through unlockMode: Level 3 can unlock through relic collection or enemy defeat, while Level 4 requires relic collection and enemy defeat. 
+
+playtesting notes: the pickup was easily figured out but the tester wasnt aware of the existance of the lift before i directly told them(
+testers figured out the mechanic of killing mobs after several attempts;
+suggestion from the tester is mainly on making a transitioning betweeen each stages\
+
+## Actitivy 2 
+1.The Multiply setting makes the resulting color darker and less saturated because RGB values are stored between 0 and 1. When two color channels are multiplied together, the result usually becomes smaller. For example, 0.8 × 0.5 = 0.4, so the final color loses brightness. Since each red, green, and blue channel is reduced this way, the blended color looks darker and less intense.
+2.If we use Multiply to combine Alpha values, the result will usually be more translucent than either original value. This is because alpha values are also between 0 and 1, so multiplying them makes the final alpha smaller. For example, 0.5 × 0.5 = 0.25, which means the object becomes more transparent.
+3.The shader gets the UV values from the mesh itself. The Sphere or Shiba model has UV coordinates saved as part of its mesh data. Unity’s UV0 node reads those coordinates and uses them to tell the shader which part of the texture should appear on each part of the object.
+4.Yes, manipulating colors with math sounds interesting because it shows that shaders are not just about picking colors manually. By using math nodes like Blend, Multiply, Split, and Sample Texture 2D, I can create effects such as tinting, transparency, darker color mixing, or ghost-like materials. It makes shaders feel more flexible because one graph can create many different visual results depending on the material settings
