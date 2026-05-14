@@ -133,3 +133,29 @@ suggestion from the tester is mainly on making a transitioning betweeen each sta
 2.If we use Multiply to combine Alpha values, the result will usually be more translucent than either original value. This is because alpha values are also between 0 and 1, so multiplying them makes the final alpha smaller. For example, 0.5 × 0.5 = 0.25, which means the object becomes more transparent.
 3.The shader gets the UV values from the mesh itself. The Sphere or Shiba model has UV coordinates saved as part of its mesh data. Unity’s UV0 node reads those coordinates and uses them to tell the shader which part of the texture should appear on each part of the object.
 4.Yes, manipulating colors with math sounds interesting because it shows that shaders are not just about picking colors manually. By using math nodes like Blend, Multiply, Split, and Sample Texture 2D, I can create effects such as tinting, transparency, darker color mixing, or ghost-like materials. It makes shaders feel more flexible because one graph can create many different visual results depending on the material settings
+
+
+# Week 7 In class
+
+
+1.The data for the Vertex Color node came from the Shiba mesh itself. Each vertex in the mesh stores different kinds of data, including position, normal, tangent, UV, and color. The Vertex Color node reads that stored color data from each vertex and sends it into the shader.
+
+
+2.The colors are blended at the edges because vertex color exists only on the vertices, not every pixel. When the fragment shader draws the polygons, Unity interpolates the vertex colors across the surface between nearby vertices, which creates smooth blending instead of sharp color borders.
+
+
+3.The vertex-colored Shiba is less detailed because the color information depends on how many vertices the mesh has. A texture can store many more color details using pixels, so it can show sharper patterns and smaller features. Vertex color is useful for simple color variation, stylized low-poly art, masks, gradients, quick debugging, or adding lightweight color information without using a full texture.
+
+
+4.Yes, something looks wrong with the mesh’s vertex normals. The activity notes that the Shiba’s vertex colors show an issue on the back-left leg, which suggests some normal data may be incorrect or inconsistent there.
+
+
+5.Another piece of data I could test with a debug shader is UV coordinates. For example, I could output the UV values as colors to see whether the texture coordinates are stretched, flipped, or mapped incorrectly. This would be useful when a texture looks distorted on a model.
+
+
+6.The lighting error happens because the Main Light Direction vector is pointing toward the Shiba, while the Shiba’s surface normals point outward from the mesh. When the dot product compares two vectors facing opposite directions, the result becomes negative, making the surfaces facing the light appear dark and the back-facing surfaces appear bright. Multiplying the light direction by -1 fixes the comparison.
+
+
+7.We set the Blend Mode to Additive for the fire effect because additive blending makes bright parts of the texture add light/color on top of the background, which creates a glowing effect. This works well for fire because fire should look bright, transparent, and luminous instead of solid.
+
+
