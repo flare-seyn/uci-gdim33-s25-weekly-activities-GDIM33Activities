@@ -155,7 +155,28 @@ suggestion from the tester is mainly on making a transitioning betweeen each sta
 
 6.The lighting error happens because the Main Light Direction vector is pointing toward the Shiba, while the Shiba’s surface normals point outward from the mesh. When the dot product compares two vectors facing opposite directions, the result becomes negative, making the surfaces facing the light appear dark and the back-facing surfaces appear bright. Multiplying the light direction by -1 fixes the comparison.
 
+# Week 8 In class
 
-7.We set the Blend Mode to Additive for the fire effect because additive blending makes bright parts of the texture add light/color on top of the background, which creates a glowing effect. This works well for fire because fire should look bright, transparent, and luminous instead of solid.
+link:https://11122233444444.itch.io/gdim33-vertical-sliece-3
+new: added a loop system added new trap type and improved player model and several effect
+goal: test overall loop, digging potential bugs
 
+notes: the playtester payed some effort to understanad core mechanics through gameplay and several bugs were detected., it was not needed for external help when player was exploring options and mechanics
 
+Activity 2C Devlog Questions
+ 
+1. Open the Frame Debugger window. What's the name of the pass associated with the post-processing effect we created? Other than the name being kinda obvious, how can you tell?
+
+The pass associated with the post-processing effect is FullScreenPassRendererFeature. I can tell because this renderer feature uses the PostEffect material as its Pass Material, and the effect changes the entire screen instead of only changing one object. The shader samples the BlitSource, which represents the game’s color buffer, so it is using the image already drawn to the screen and applying a full-screen effect on top of it. In the Frame Debugger, this shows up as an extra full-screen rendering pass after the main scene has already been rendered.
+
+2. What does the screen look like if the Lerp value is set to 0.5? What about 0? What about 1?
+
+If the Lerp value is 0, the screen looks normal because it only shows the original game screen from BlitSource. If the Lerp value is 1, the screen shows the full post-processing effect, so the red cobblestone texture overlay is strongly applied across the whole screen. If the Lerp value is 0.5, the screen is halfway between the original game screen and the red overlay effect, so the red texture is visible but only partially blended in.
+
+3. WHY does the screen look like that based on those different Lerp values?
+
+The screen changes because the Lerp node blends between two inputs. The first input is the original game screen from BlitSource, and the second input is the modified version where the original screen is multiplied by the red effect texture. A Lerp value of 0 means it uses only the first input, so the screen stays normal. A value of 1 means it uses only the second input, so the red effect is fully visible. A value of 0.5 means it blends equally between the two, making the effect appear at half strength.
+
+4. Why does our algorithm for the Lerp amount use (sin(time)+1)/2 instead of just sin(time)?
+
+The Lerp value is supposed to stay between 0 and 1, but sin(time) gives values from -1 to 1. When the value goes below 0, the Lerp can behave in an unintended way, which is why the screen can get weirdly bright during the animation. Using (sin(time)+1)/2 fixes the range. Adding 1 changes the range from -1 to 1 into 0 to 2, and dividing by 2 changes it into 0 to 1. This makes the red post-processing effect smoothly pulse between no effect and full effect without going outside the valid Lerp range.
