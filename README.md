@@ -183,7 +183,8 @@ The Lerp value is supposed to stay between 0 and 1, but sin(time) gives values f
 
 # Week 9 In class
 
-<img width="600" height="600 alt="image" src="https://github.com/user-attachments/assets/0c26054a-f7f8-40ea-9e65-169a80d4a47b" />
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/13fc354d-a45f-45a2-a7e0-15f4ae3edd54" />
+
 My table chose Minecraft for the rendering effect brainstorm. We picked it because even though the visuals are simple, the game still uses noticeable gameplay-related effects that change how the world, objects, and UI feel during play. Looking at screenshots, we focused on block outlines when targeting objects, enchantment/anvil visual presentation, and potion or status-effect visuals in the world and on the screen.
 
 One effect we discussed was the selection highlight / block outline that appears when the player points at a block. I think this is most likely not a full-screen effect, but instead a targeted effect applied to the selected object or drawn as an overlay around that object. The important shader or rendering feature is the visible outline and contrast that makes the selected block stand out from the rest of the environment. If I were trying to build this, I would guess it activates when the game detects which object the player is currently aiming at, then enables the outline only for that target. That could be done by turning on a material effect, swapping materials, or enabling a special render layer for the selected object.
