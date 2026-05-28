@@ -180,3 +180,24 @@ The screen changes because the Lerp node blends between two inputs. The first in
 4. Why does our algorithm for the Lerp amount use (sin(time)+1)/2 instead of just sin(time)?
 
 The Lerp value is supposed to stay between 0 and 1, but sin(time) gives values from -1 to 1. When the value goes below 0, the Lerp can behave in an unintended way, which is why the screen can get weirdly bright during the animation. Using (sin(time)+1)/2 fixes the range. Adding 1 changes the range from -1 to 1 into 0 to 2, and dividing by 2 changes it into 0 to 1. This makes the red post-processing effect smoothly pulse between no effect and full effect without going outside the valid Lerp range.
+
+# Week 9 In class
+
+<img width="600" height="600 alt="image" src="https://github.com/user-attachments/assets/0c26054a-f7f8-40ea-9e65-169a80d4a47b" />
+My table chose Minecraft for the rendering effect brainstorm. We picked it because even though the visuals are simple, the game still uses noticeable gameplay-related effects that change how the world, objects, and UI feel during play. Looking at screenshots, we focused on block outlines when targeting objects, enchantment/anvil visual presentation, and potion or status-effect visuals in the world and on the screen.
+
+One effect we discussed was the selection highlight / block outline that appears when the player points at a block. I think this is most likely not a full-screen effect, but instead a targeted effect applied to the selected object or drawn as an overlay around that object. The important shader or rendering feature is the visible outline and contrast that makes the selected block stand out from the rest of the environment. If I were trying to build this, I would guess it activates when the game detects which object the player is currently aiming at, then enables the outline only for that target. That could be done by turning on a material effect, swapping materials, or enabling a special render layer for the selected object.
+
+
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/a5f62c02-75af-4223-ac61-cb28163d72a3" />
+
+A second effect we discussed was the glow and visual emphasis of enchanted or upgraded items, like the enchanted book and renamed sword shown in the anvil screenshot. This feels like an effect tied to an individual object’s material rather than a screen-wide effect. The important features seem to be shimmer, color shift, and a magical animated look that tells the player the item is special. I think a system like this could be activated by item data, so once the game knows an item is enchanted or upgraded, it applies a special material or animated shader to that object. In a similar project, I would probably connect that to item state so the effect automatically appears only when the item has that property.
+
+<img width="600" height="600<img width="805" height="273" alt="image" src="https://github.com/user-attachments/assets/25a6d112-b6f2-488d-91d4-e46b9a6835eb" />
+" alt="image" src="https://github.com/user-attachments/assets/abaabe0b-43f6-4d27-8b62-083e7064b4d1" />
+
+A third effect we discussed was the potion/status-effect visual feedback, like the green particles and tinted sky feeling in the last screenshot. This seems like a combination of object-space particles and possibly some broader screen or atmosphere changes. The important features are floating particles, color mood, and visual feedback that tells the player a status effect is active. If I were building it, I think the particle effect would be attached to the player while the status is active, and any larger mood shift could come from enabling or adjusting a global effect, such as fog, color tint, or post-processing, depending on how dramatic I wanted it to feel.
+
+![Uploading image.png…]()
+
+Today, for my own Vertical Slice, I worked on my ShaderGraph for my magical power-up effect. One improvement I made was making the effect more noticeable so it reads more clearly as an important object in the level. Earlier, the shader did not stand out enough from the rest of the environment, so I adjusted the color and glow to create stronger contrast. This helped the effect feel more intentional and made the object easier for the player to identify as something special during gameplay.
