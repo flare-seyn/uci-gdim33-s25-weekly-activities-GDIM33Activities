@@ -202,3 +202,18 @@ A third effect we discussed was the potion/status-effect visual feedback, like t
 ![Uploading image.png…]()
 
 Today, for my own Vertical Slice, I worked on my ShaderGraph for my magical power-up effect. One improvement I made was making the effect more noticeable so it reads more clearly as an important object in the level. Earlier, the shader did not stand out enough from the rest of the environment, so I adjusted the color and glow to create stronger contrast. This helped the effect feel more intentional and made the object easier for the player to identify as something special during gameplay.
+
+# Week 10 in class
+
+## Activity 1 playtesting
+there are some new edited ingame features , including new  in game resources, extra lifetimes and chances to make up instead of instant failure, new types of in game stuff
+the tester haven;t played before so he struggled a lot to understand the gameplay techniques
+
+enjoyed others playtesting as there game procedure is really long and complicated(extremly hard! frightening*reducing sanity!)
+
+
+## Activity 2 discussion
+
+My table’s planning strategy was to treat the game like a group of connected systems before starting to code. Instead of jumping straight into implementation, we said it is more useful to first identify the main objects in the game, such as the player, enemies, interactable objects, hazards, UI, and level pieces, and then diagram how those objects relate to each other. We thought object diagrams, like bubble diagrams, are helpful because they force us to break broad ideas into smaller, more specific objects and behaviors. For example, instead of just writing “enemy system,” it is clearer to break it into enemy object, patrol state, attack state, detection range, and damage behavior. After that, we thought the next step should be making a task break-down where each feature is built from a simplest working version into a more complex version. That way, each step can end with a clear test, such as a debug log, a visible change in the scene, or a playable interaction. Overall, our strategy was: identify objects, map relationships, break features into smaller steps, then build and test one small piece at a time.
+
+We also discussed how planning changes the way we see a game’s scope. Planning makes the scope feel much more real, because ideas that sound simple at first often turn out to involve many connected parts once they are written down. A feature that seems like “just one thing” usually becomes multiple objects, scripts, states, and interactions when it is broken apart. Because of that, planning helps reveal whether an idea is actually manageable or too large for the available time. For me, planning makes scope feel smaller in a good way, because it pushes me to focus on the minimum version of the game that is still playable. Instead of thinking about everything I want the final game to have, I can focus on the smallest set of systems needed to communicate the core experience. That makes the project feel more achievable and helps prevent me from overcommitting early in development.
